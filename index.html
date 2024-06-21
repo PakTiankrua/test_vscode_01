@@ -3,10 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Web Page</title>
+    <title>JavaScript Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: blue;
+        }
+        p {
+            color: green;
+        }
+    </style>
 </head>
 <body>
     <h1>Hello World!</h1>
     <p>This is my first web page.</p>
+    <button id="changeContent">Change Content</button>
+    <p id="content">This is the original content.</p>
+    <button id="changeStyle">Change Style</button>
+    <button id="showAlert">Show Alert</button>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <input type="submit" value="Submit">
+    </form>
+
+    <button id="addElement">Add Element</button>
+    <div id="container"></div>
+
+    <button id="toggleVisibility">Toggle Visibility</button>
+    <p id="toggleText">You can see me!</p>
+
+    <img id="myImage" src="image1.png" alt="Image 1" width="200">
+    <button id="changeImage">Change Image</button>
+
+    <script>
+        document.getElementById('changeContent').addEventListener('click', function() {
+            document.getElementById('content').textContent = 'This is the new content!';
+        });
+        document.getElementById('changeStyle').addEventListener('click', function() {
+            document.querySelector('body').style.backgroundColor = '#add8e6';
+            document.querySelector('h1').style.color = '#ff6347';
+        });
+        document.getElementById('showAlert').addEventListener('click', function() {
+            alert('This is an alert message!');
+        });
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            var name = document.getElementById('name').value;
+            if (name === '') {
+                alert('Name cannot be empty!');
+                event.preventDefault();
+            }
+        });
+        document.getElementById('addElement').addEventListener('click', function() {
+        var newElement = document.createElement('p');
+        newElement.textContent = 'This is a new paragraph!';
+        document.getElementById('container').appendChild(newElement);
+        });
+        document.getElementById('toggleVisibility').addEventListener('click', function() {
+        var toggleText = document.getElementById('toggleText');
+        if (toggleText.style.display === 'none') {
+            toggleText.style.display = 'block';
+        } else {
+            toggleText.style.display = 'none';
+        }
+        });
+        document.getElementById('changeImage').addEventListener('click', function() {
+        var img = document.getElementById('myImage');
+        if (img.src.includes('image1.png')) {
+            img.src = 'image2.png';
+        } else {
+            img.src = 'image1.png'; 
+        }
+        });
+    </script>
 </body>
 </html>
