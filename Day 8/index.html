@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Sample Project</h1>
+    <p>This is a simple web page to consolidate my knowledge of HTML, CSS, and JavaScript.</p>
+    
+    <p id="myParagraph">Original content.</p>
+    <button onclick="changeContent()">Change Content</button>
+    
+    <button onclick="changeStyle()">Change Style</button>
+    
+    <button onclick="showAlert()">Show Alert</button>
+    
+    <button onclick="addElement()">Add Element</button>
+    <div id="container"></div>
+    
+    <button onclick="toggleVisibility()">Toggle Visibility</button>
+    <p id="toggleText">You can see me!</p>
+    
+    <img id="myImage" src="image1.png" alt="Image 1" width="200">
+    <button onclick="changeImage()">Change Image</button>
+    
+    <form id="myForm" onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <input type="submit" value="Submit">
+    </form>
+    
+    <script>
+        function changeContent() {
+            document.getElementById('myParagraph').textContent = 'New content!';
+        }
+        
+        function changeStyle() {
+            document.querySelector('body').style.backgroundColor = '#add8e6';
+            document.querySelector('h1').style.color = '#ff6347';
+        }
+        
+        function showAlert() {
+            alert('This is an alert message!');
+        }
+        
+        function addElement() {
+            var newElement = document.createElement('p');
+            newElement.textContent = 'This is a new paragraph!';
+            document.getElementById('container').appendChild(newElement);
+        }
+        
+        function toggleVisibility() {
+            var toggleText = document.getElementById('toggleText');
+            if (toggleText.style.display === 'none') {
+                toggleText.style.display = 'block';
+            } else {
+                toggleText.style.display = 'none';
+            }
+        }
+        
+        function changeImage() {
+            var img = document.getElementById('myImage');
+            if (img.src.includes('image1.png')) {
+                img.src = 'sunset_image.png';
+            } else {
+                img.src = 'image1.png';
+            }
+        }
+        
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            if (name === '') {
+                alert('Name cannot be empty!');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
