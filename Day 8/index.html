@@ -39,7 +39,7 @@
     <button onclick="toggleVisibility()">Toggle Visibility</button>
     <p id="toggleText">You can see me!</p>
     
-    <img id="myImage" src="image1.png" alt="Image 1" width="200">
+    <img id="myImage" src="img/image1.png" alt="Image 1" width="200">
     <button onclick="changeImage()">Change Image</button>
     
     <form id="myForm" onsubmit="return validateForm()">
@@ -79,10 +79,10 @@
         
         function changeImage() {
             var img = document.getElementById('myImage');
-            if (img.src.includes('image1.png')) {
-                img.src = 'sunset_image.png';
+            if (img.src.includes('img/image1.png')) {
+                img.src = 'img/image2.png';
             } else {
-                img.src = 'image1.png';
+                img.src = 'img/image1.png';
             }
         }
         
